@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="timer {{timeLeft <= 30 ? 'warning' : ''}}">
+        <text>剩余时间: {{timeDisplay}} </text>
+    </view>
+
+    <view class="board">
+        <block wx:for="{{items}}" wx:key="index">
+            <view class="item" style="left: {{item.x}}px; top: {{item.y}}px; z-index: {{item.zIndex}}; transform: perspective(500px) rotate({{item.rotation}}deg);" bindtap="selectItem" data-index="{{index}}">
+                <image src="{{item.image}}" style="width: 100%; height: 100%;" />
+            </view>
+        </block>
+    </view>
+
+    <view class="slots">
+        <block wx:for="{{slots}}" wx:key="index">
+            <view class="slot">
+                <image src="{{item.image}}" style="width: 100%; height: 100%;" />
+            </view>
+        </block>
+        <block wx:for="{{slotSize - slots.length}}" wx:key="index">
+            <view class="slot empty"></view>
+        </block>
+    </view>
+
+    <view class="button-area">
+        <view class="button" bindtap="manualShake">打乱</view>
+        <view class="button" bindtap="restartGame" wx:if="{{gameStatus === 'lose'}}">重新开始</view>
+    </view>
+</view>
