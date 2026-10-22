@@ -1,16 +1,22 @@
-# financetools
-微信小程序--财务函数，房贷、五险一金计算器
+# 算价有数
 
-- 微信小程序二维码
-<div><img src="image/preview/0.jpg" width="333" alt="微信小程序二维码"/></div>
+微信小程序。打开就是价税计算，算完可以把结果发给同事，或生成图片。
 
-- 财务函数
-<div><img src="image/preview/1.png" width="333" alt="财务函数"/></div>
-<div><img src="image/preview/2.png" width="333" alt="函数详情"/></div>
+## 首页：价税计算
 
-- 房贷计算
-<div><img src="image/preview/3.png" width="333" alt="房贷计算"/></div>
-<div><img src="image/preview/4.png" width="333" alt="房贷计算结果"/></div>
+在含税价和不含税价之间换算，得到不含税价、税额、价税合计。
 
+税率：13%、9%、6%、1%、3%、5%、0%。金额按分四舍五入，并保证含税价等于不含税价加税额。
+
+## 更多工具
+
+从首页底部进入。
+
+- 报价毛利：按不含税收入减不含税成本
+- 报销分摊：按人数平摊，差额放在最后一人
+- 个税与年终奖：累计预扣估算本月到手，并比较年终奖两种计税
+- 房贷月供
 - 五险一金
-<div><img src="image/preview/5.png" width="333" alt="五险一金"/></div>
+- 计算函数
+
+计算结果只保存在手机本地。开票、申报和个税以票面及税务机关为准。
