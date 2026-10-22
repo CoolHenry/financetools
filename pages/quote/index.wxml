@@ -1,0 +1,35 @@
+<view class="wk">
+    <view class="wk-card">
+        <view class="wk-label">报价（元）</view>
+        <input class="wk-input" type="digit" placeholder="卖给客户的价格" value="{{price}}" bindinput="onPrice" />
+        <view class="wk-seg">
+            <view class="wk-seg-item {{priceTax === 'incl' ? 'on' : ''}}" data-field="priceTax" data-value="incl" bindtap="switchTax">报价含税</view>
+            <view class="wk-seg-item {{priceTax === 'excl' ? 'on' : ''}}" data-field="priceTax" data-value="excl" bindtap="switchTax">报价不含税</view>
+        </view>
+        <view class="wk-label">成本（元）</view>
+        <input class="wk-input" type="digit" placeholder="这单的成本" value="{{cost}}" bindinput="onCost" />
+        <view class="wk-seg">
+            <view class="wk-seg-item {{costTax === 'excl' ? 'on' : ''}}" data-field="costTax" data-value="excl" bindtap="switchTax">成本不含税</view>
+            <view class="wk-seg-item {{costTax === 'incl' ? 'on' : ''}}" data-field="costTax" data-value="incl" bindtap="switchTax">成本含税</view>
+        </view>
+        <view class="wk-label">税率</view>
+        <view class="wk-chips">
+            <view class="wk-chip {{rateIndex === index ? 'on' : ''}}" wx:for="{{rates}}" wx:key="label" data-index="{{index}}" bindtap="pickRate">{{item.label}}</view>
+        </view>
+    </view>
+    <view class="wk-card" wx:if="{{result}}">
+        <view class="wk-label">毛利</view>
+        <view class="wk-result-main {{result.margin < 0 ? 'wk-neg' : ''}}">¥ {{result.marginText}}</view>
+        <view class="wk-row"><text>毛利率</text><text class="{{result.margin < 0 ? 'wk-neg' : 'wk-pos'}}">{{result.marginRateText}}</text></view>
+        <view class="wk-row"><text>不含税收入</text><text>¥ {{result.revenueText}}</text></view>
+        <view class="wk-row"><text>不含税成本</text><text>¥ {{result.costText}}</text></view>
+        <view class="wk-row"><text>价税合计</text><text>¥ {{result.inclusiveText}}</text></view>
+        <view class="wk-formula">毛利按不含税收入减不含税成本计算。</view>
+        <view class="wk-actions" style="margin-top: 28rpx;">
+            <button class="wk-btn wk-btn-primary" open-type="share">发给同事</button>
+            <view class="wk-btn wk-btn-ghost" bindtap="makeImage">生成图片</view>
+        </view>
+    </view>
+    <view class="wk-note">用来判断这单能不能接。正式核算还要看费用、折扣和发票口径。</view>
+    <canvas type="2d" id="card" class="wk-canvas"></canvas>
+</view>

@@ -1,0 +1,14 @@
+<view class="wk">
+    <view class="wk-group">报价和报销</view>
+    <view class="wk-links">
+        <navigator class="wk-link" url="/pages/quote/index"><text>报价毛利</text><text>›</text></navigator>
+        <navigator class="wk-link" url="/pages/split/index"><text>报销分摊</text><text>›</text></navigator>
+        <navigator class="wk-link" url="/pages/tax/index"><text>个税与年终奖</text><text>›</text></navigator>
+    </view>
+    <view class="wk-group">其他计算</view>
+    <view class="wk-links">
+        <navigator class="wk-link" url="/pages/mortgage/mortgage"><text>房贷月供</text><text>›</text></navigator>
+        <navigator class="wk-link" url="/pages/wuxian-yijin/wxyj"><text>五险一金</text><text>›</text></navigator>
+        <navigator class="wk-link" url="/pages/finance/finance"><text>计算函数</text><text>›</text></navigator>
+    </view>
+</view>

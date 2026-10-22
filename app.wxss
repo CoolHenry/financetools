@@ -1,7 +1,7 @@
 /**app.wxss**/
 @import "style/weui.wxss";
 page{
-    background-color: #F8F8F8;
+    background-color: #F6F7F9;
     font-size: 16px;
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
@@ -43,6 +43,286 @@ button{
   margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
+button[type="primary"],
+.weui-btn_primary {
+  background-color: #1677FF;
+}
 .weui-navbar {
   background-color: rgba(255, 255, 255, .8);
+}
+
+.wk {
+  min-height: 100vh;
+  padding: 28rpx 28rpx 48rpx;
+  box-sizing: border-box;
+  background: #F6F7F9;
+  color: #1D2129;
+}
+.wk-hero {
+  padding: 12rpx 8rpx 28rpx;
+}
+.wk-kicker {
+  font-size: 24rpx;
+  color: #86909C;
+  letter-spacing: 2rpx;
+}
+.wk-title {
+  margin-top: 8rpx;
+  font-size: 44rpx;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.wk-desc {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #86909C;
+  line-height: 1.5;
+}
+.wk-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin-bottom: 24rpx;
+}
+.wk-label {
+  font-size: 26rpx;
+  color: #86909C;
+}
+.wk-input {
+  margin-top: 12rpx;
+  height: 88rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #1D2129;
+}
+.wk-seg {
+  display: flex;
+  background: #F2F3F5;
+  border-radius: 12rpx;
+  padding: 6rpx;
+  margin-bottom: 28rpx;
+}
+.wk-seg-item {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 64rpx;
+  color: #86909C;
+  border-radius: 10rpx;
+}
+.wk-seg-item.on {
+  background: #fff;
+  color: #1677FF;
+  font-weight: 600;
+}
+.wk-chips {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16rpx;
+}
+.wk-chip {
+  margin: 0 16rpx 16rpx 0;
+  padding: 0 22rpx;
+  line-height: 60rpx;
+  border-radius: 999rpx;
+  background: #F2F3F5;
+  color: #4E5969;
+  font-size: 24rpx;
+}
+.wk-chip.on {
+  background: #1677FF;
+  color: #fff;
+}
+.wk-result {
+  margin-top: 8rpx;
+  padding-top: 8rpx;
+}
+.wk-result-main {
+  margin-top: 8rpx;
+  font-size: 56rpx;
+  font-weight: 650;
+  letter-spacing: -1rpx;
+  color: #1677FF;
+}
+.wk-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22rpx 0;
+  border-top: 1rpx solid #eef1f4;
+  font-size: 28rpx;
+}
+.wk-row text:first-child {
+  color: #86909C;
+}
+.wk-row text:last-child {
+  font-weight: 600;
+}
+.wk-formula {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #86909C;
+  line-height: 1.6;
+}
+.wk-actions {
+  display: flex;
+  gap: 16rpx;
+}
+.wk-btn {
+  flex: 1;
+  margin: 0;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 14rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.wk-btn::after {
+  border: none;
+}
+.wk-btn-primary {
+  background: #1677FF;
+  color: #fff;
+}
+.wk-btn-ghost {
+  background: #E8F3FF;
+  color: #1677FF;
+}
+.wk-note {
+  margin-top: 20rpx;
+  font-size: 22rpx;
+  color: #86909C;
+  line-height: 1.6;
+}
+.wk-tool {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin-bottom: 16rpx;
+}
+.wk-tool-mark {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 16rpx;
+  background: #E8F3FF;
+  color: #1677FF;
+  font-size: 26rpx;
+  font-weight: 700;
+  text-align: center;
+  line-height: 72rpx;
+  margin-right: 20rpx;
+}
+.wk-tool-name {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.wk-tool-desc {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: #86909C;
+}
+.wk-section {
+  margin: 28rpx 8rpx 16rpx;
+  font-size: 26rpx;
+  color: #86909C;
+}
+.wk-link {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 28rpx;
+  font-size: 30rpx;
+}
+.wk-link + .wk-link {
+  border-top: 1rpx solid #eef1f4;
+}
+.wk-links {
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.wk-history {
+  padding: 24rpx 28rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eef1f4;
+}
+.wk-history-title {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.wk-history-summary {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #86909C;
+}
+.wk-stepper {
+  display: flex;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.wk-step {
+  width: 72rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  background: #F2F3F5;
+  border-radius: 12rpx;
+  font-size: 40rpx;
+}
+.wk-step-value {
+  min-width: 120rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.wk-canvas {
+  position: fixed;
+  left: -4000px;
+  top: 0;
+  width: 600px;
+  height: 780px;
+}
+.wk-neg {
+  color: #F53F3F;
+}
+.wk-pos {
+  color: #00B42A;
+}
+.wk-amount {
+  display: flex;
+  align-items: baseline;
+  margin-top: 8rpx;
+  border-bottom: 4rpx solid #1677FF;
+}
+.wk-yen {
+  font-size: 36rpx;
+  font-weight: 600;
+  margin-right: 8rpx;
+}
+.wk-amount .wk-input {
+  flex: 1;
+  margin-top: 0;
+  height: 96rpx;
+  font-size: 64rpx;
+  font-weight: 600;
+}
+.wk-hint {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #86909C;
+  line-height: 1.5;
+}
+.wk-more {
+  display: block;
+  margin-top: 36rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #86909C;
+}
+.wk-group {
+  margin: 8rpx 8rpx 12rpx;
+  font-size: 24rpx;
+  color: #86909C;
 }

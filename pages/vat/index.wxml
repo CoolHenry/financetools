@@ -1,0 +1,33 @@
+<view class="wk">
+    <view class="wk-card">
+        <view class="wk-seg">
+            <view class="wk-seg-item {{direction === 'incl' ? 'on' : ''}}" data-dir="incl" bindtap="switchDir">含税价</view>
+            <view class="wk-seg-item {{direction === 'excl' ? 'on' : ''}}" data-dir="excl" bindtap="switchDir">不含税价</view>
+        </view>
+        <view class="wk-label">{{direction === 'incl' ? '输入含税价' : '输入不含税价'}}</view>
+        <view class="wk-amount">
+            <text class="wk-yen">¥</text>
+            <input class="wk-input" type="digit" focus="{{focus}}" placeholder="0.00" placeholder-class="wk-hint" value="{{amount}}" bindinput="onAmount" />
+        </view>
+        <view class="wk-label" style="margin-top: 32rpx;">税率 {{rateHint}}</view>
+        <view class="wk-chips">
+            <view class="wk-chip {{rateIndex === index ? 'on' : ''}}" wx:for="{{rates}}" wx:key="value" data-index="{{index}}" bindtap="pickRate">{{item.short}}</view>
+        </view>
+    </view>
+
+    <view class="wk-card">
+        <view class="wk-label">{{direction === 'incl' ? '不含税价' : '含税价'}}</view>
+        <view class="wk-result-main">¥ {{primaryText}}</view>
+        <view class="wk-row"><text>不含税价</text><text>¥ {{result ? result.exclusiveText : '—'}}</text></view>
+        <view class="wk-row"><text>税额</text><text>¥ {{result ? result.taxText : '—'}}</text></view>
+        <view class="wk-row"><text>价税合计</text><text>¥ {{result ? result.inclusiveText : '—'}}</text></view>
+        <view class="wk-formula" wx:if="{{result}}">{{result.formula}}</view>
+        <view class="wk-actions" wx:if="{{result}}" style="margin-top: 28rpx;">
+            <button class="wk-btn wk-btn-primary" open-type="share">发给同事</button>
+            <view class="wk-btn wk-btn-ghost" bindtap="makeImage">生成图片</view>
+        </view>
+    </view>
+    <view class="wk-note">不含税价 = 含税价 ÷ (1 + 税率)。正式开票以票面为准。</view>
+    <navigator class="wk-more" url="/pages/tools/index">更多工具</navigator>
+    <canvas type="2d" id="card" class="wk-canvas"></canvas>
+</view>

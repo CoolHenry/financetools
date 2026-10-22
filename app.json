@@ -1,55 +1,22 @@
 {
     "pages": [
+        "pages/vat/index",
+        "pages/tools/index",
+        "pages/quote/index",
+        "pages/split/index",
+        "pages/tax/index",
         "pages/finance/finance",
         "pages/mortgage/mortgage",
         "pages/finance/func/func",
         "pages/wuxian-yijin/wxyj",
-        "pages/logs/logs",
-        "pages/mortgage/detail/detail",
-        "pages/games/index"
+        "pages/mortgage/detail/detail"
     ],
-    "subPackages": [{
-        "root": "packageGames",
-        "pages": [
-            "pages/games/index"
-        ]
-    }],
     "window": {
-        "navigationBarTextStyle": "white",
-        "navigationBarBackgroundColor": "#1AAD19",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#FFFFFF",
         "backgroundTextStyle": "dark",
-        "backgroundColor": "#f8f8f8",
-        "navigationBarTitleText": "Finance"
+        "backgroundColor": "#F6F7F9",
+        "navigationBarTitleText": "价税计算"
     },
-    "tabBar": {
-        "color": "#7A7E83",
-        "selectedColor": "#3cc51f",
-        "borderStyle": "black",
-        "backgroundColor": "#ffffff",
-        "list": [{
-                "pagePath": "pages/finance/finance",
-                "iconPath": "image/icon_component.png",
-                "selectedIconPath": "image/icon_component_HL.png",
-                "text": "金融公式"
-            },
-            {
-                "pagePath": "pages/mortgage/mortgage",
-                "iconPath": "image/icon_API.png",
-                "selectedIconPath": "image/icon_API_HL.png",
-                "text": "房贷计算"
-            },
-            {
-                "pagePath": "pages/wuxian-yijin/wxyj",
-                "iconPath": "image/icon_API.png",
-                "selectedIconPath": "image/icon_API_HL.png",
-                "text": "五险一金"
-            },
-            {
-                "pagePath": "pages/games/index",
-                "iconPath": "image/icon_API.png",
-                "selectedIconPath": "image/icon_API_HL.png",
-                "text": "抓大鹅"
-            }
-        ]
-    }
+    "sitemapLocation": "sitemap.json"
 }

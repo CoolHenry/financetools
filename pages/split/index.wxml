@@ -1,0 +1,26 @@
+<view class="wk">
+    <view class="wk-card">
+        <view class="wk-label">总金额（元）</view>
+        <input class="wk-input" type="digit" placeholder="例如 1000" value="{{total}}" bindinput="onTotal" />
+        <view class="wk-label">平摊人数</view>
+        <view class="wk-stepper">
+            <view class="wk-step" bindtap="changePeople" data-delta="-1">－</view>
+            <view class="wk-step-value">{{people}}</view>
+            <view class="wk-step" bindtap="changePeople" data-delta="1">＋</view>
+        </view>
+    </view>
+    <view class="wk-card" wx:if="{{result}}">
+        <view class="wk-label">每人</view>
+        <view class="wk-result-main">¥ {{result.eachText}}</view>
+        <view class="wk-row"><text>总金额</text><text>¥ {{result.totalText}}</text></view>
+        <view class="wk-row"><text>人数</text><text>{{result.count}} 人</text></view>
+        <view class="wk-row" wx:if="{{result.hasRemainder}}"><text>最后一人</text><text>¥ {{result.lastText}}</text></view>
+        <view class="wk-formula">{{result.formula}}</view>
+        <view class="wk-actions" style="margin-top: 28rpx;">
+            <button class="wk-btn wk-btn-primary" open-type="share">发到群里</button>
+            <view class="wk-btn wk-btn-ghost" bindtap="makeImage">生成图片</view>
+        </view>
+    </view>
+    <view class="wk-note">除不尽的差额放在最后一人，所有人加总等于总金额。</view>
+    <canvas type="2d" id="card" class="wk-canvas"></canvas>
+</view>

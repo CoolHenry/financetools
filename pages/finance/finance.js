@@ -26,7 +26,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '金融公式',
+      title: '计算函数',
       path: '/pages/finance/finance',
       success: function (res) {
         // 转发成功

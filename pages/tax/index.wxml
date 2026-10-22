@@ -1,0 +1,44 @@
+<view class="wk">
+    <view class="wk-card">
+        <view class="wk-label">税前月薪（元）</view>
+        <input class="wk-input" type="digit" placeholder="例如 20000" value="{{salary}}" bindinput="onField" data-field="salary" />
+        <view class="wk-label">个人社保公积金（元/月）</view>
+        <input class="wk-input" type="digit" placeholder="没有就填 0" value="{{insurance}}" bindinput="onField" data-field="insurance" />
+        <view class="wk-label">专项附加扣除（元/月）</view>
+        <input class="wk-input" type="digit" placeholder="住房、子女、赡养等合计" value="{{special}}" bindinput="onField" data-field="special" />
+        <view class="wk-label">发到第几个月</view>
+        <picker mode="selector" range="{{months}}" value="{{monthIndex}}" bindchange="onMonth">
+            <view class="wk-input" style="font-size: 32rpx;">第 {{months[monthIndex]}} 个月</view>
+        </picker>
+        <view class="wk-label">年终奖（元，可不填）</view>
+        <input class="wk-input" type="digit" placeholder="用来比较两种计税" value="{{bonus}}" bindinput="onField" data-field="bonus" />
+    </view>
+
+    <view class="wk-card" wx:if="{{result}}">
+        <view class="wk-label">本月到手</view>
+        <view class="wk-result-main">¥ {{result.netText}}</view>
+        <view class="wk-row"><text>本月个税</text><text>¥ {{result.taxText}}</text></view>
+        <view class="wk-row"><text>累计应纳税所得额</text><text>¥ {{result.ytdText}}</text></view>
+        <view class="wk-formula">按每月收入相同，用累计预扣法估算第 {{result.month}} 个月。起征额按每月 5000 元。</view>
+    </view>
+
+    <view class="wk-card" wx:if="{{bonusResult}}">
+        <view class="wk-label">年终奖更合适的算法</view>
+        <view class="wk-result-main">{{bonusResult.better}}</view>
+        <view class="wk-row"><text>单独计税后到手</text><text>¥ {{bonusResult.separateNet}}</text></view>
+        <view class="wk-row"><text>单独计税税额</text><text>¥ {{bonusResult.separateTax}}</text></view>
+        <view class="wk-row"><text>并入综合所得后到手</text><text>¥ {{bonusResult.mergedNet}}</text></view>
+        <view class="wk-row"><text>并入后奖金对应税额</text><text>¥ {{bonusResult.mergedTax}}</text></view>
+        <view class="wk-formula">并入按全年 12 个月、每月收入相同估算。单独计税政策以当年规定为准。</view>
+        <view class="wk-actions" style="margin-top: 28rpx;">
+            <button class="wk-btn wk-btn-primary" open-type="share">发给同事</button>
+            <view class="wk-btn wk-btn-ghost" bindtap="makeImage">生成图片</view>
+        </view>
+    </view>
+    <view class="wk-actions" wx:elif="{{result}}" style="margin-bottom: 24rpx;">
+        <button class="wk-btn wk-btn-primary" open-type="share">发给同事</button>
+        <view class="wk-btn wk-btn-ghost" bindtap="makeImage">生成图片</view>
+    </view>
+    <view class="wk-note">这是估算，不是申报。专项扣除、免税收入和补发工资都会改变结果，以扣缴端和个税 APP 为准。</view>
+    <canvas type="2d" id="card" class="wk-canvas"></canvas>
+</view>
